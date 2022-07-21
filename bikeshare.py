@@ -16,6 +16,9 @@ def get_filters():
         (str) city - name of the city to analyze
         (int) month - number of the month to filter by[1 for January till 12 for December], or "all" to apply no month filter
         (int) day - number of the day of week to filter by[0 for Monday till 6 for Sunday], or "all" to apply no day filter
+
+    Error Handling:
+        ValueError: Value Error could be raised when user inputs any other character than an integer
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     bad_user_input = True
@@ -91,6 +94,8 @@ def load_data(city, month, day):
         (int) day - number of the day of week to filter by[0 for Monday till 6 for Sunday], or "all" to apply no day filter
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
+    Error Handling:
+        None
     """
     file_name = city+".csv"
     df = pd.read_csv(file_name)
