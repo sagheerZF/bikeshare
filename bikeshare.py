@@ -110,8 +110,16 @@ def load_data(city, month, day):
 
 
 def time_stats(df):
-    """Displays statistics on the most frequent times of travel."""
+    """Displays statistics on the most frequent times of travel.
 
+    Args:
+        (datframe) df - Pandas Dataframe loaded from the selected csv file and
+        applied with filters as selected by the user
+    Returns:
+        None
+    Error Handling:
+        None
+    """
     print('\nCalculating The Most Frequent Times of Travel...\n')
     start_time = time.time()
 
@@ -134,8 +142,16 @@ def time_stats(df):
 
 
 def station_stats(df):
-    """Displays statistics on the most popular stations and trip."""
+    """Displays statistics on the most popular stations and trip.
 
+    Args:
+        (datframe) df - Pandas Dataframe loaded from the selected csv file and
+        applied with filters as selected by the user
+    Returns:
+        None
+    Error Handling:
+        None
+    """
     print('\nCalculating The Most Popular Stations and Trip...\n')
     start_time = time.time()
 
@@ -153,8 +169,16 @@ def station_stats(df):
 
 
 def trip_duration_stats(df):
-    """Displays statistics on the total and average trip duration."""
+    """Displays statistics on the total and average trip duration.
 
+    Args:
+        (datframe) df - Pandas Dataframe loaded from the selected csv file and
+        applied with filters as selected by the user
+    Returns:
+        None
+    Error Handling:
+        None
+    """
     print('\nCalculating Trip Duration...\n')
     start_time = time.time()
 
@@ -170,8 +194,16 @@ def trip_duration_stats(df):
 
 
 def user_stats(df):
-    """Displays statistics on bikeshare users."""
+    """Displays statistics on bikeshare users.
 
+    Args:
+        (datframe) df - Pandas Dataframe loaded from the selected csv file and
+        applied with filters as selected by the user
+    Returns:
+        None
+    Error Handling:
+        None
+    """
     print('\nCalculating User Stats...\n')
     start_time = time.time()
 
@@ -202,7 +234,16 @@ def user_stats(df):
     print('-'*40)
 
 def trip_data(df):
-    """Displays trip data on bikeshare users 5 rows at a time."""
+    """Displays trip data on bikeshare users 5 rows at a time.
+
+    Args:
+        (datframe) df - Pandas Dataframe loaded from the selected csv file and
+        applied with filters as selected by the user
+    Returns:
+        None
+    Error Handling:
+        ValueError: Value Error could be raised when user inputs any other character than an integer
+    """
     trip_data= input("Would you like to view Individual trip data?\n Please Input 1 for yes!\n: ")
     bad_user_input = True
     while bad_user_input:
