@@ -5,7 +5,7 @@ import datetime
 import calendar
 
 CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york city': 'new_york_city.csv',
+              'new_york_city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
 def get_filters():
@@ -22,7 +22,9 @@ def get_filters():
     """
     print('Hello! Let\'s explore some US bikeshare data!')
     bad_user_input = True
-    city = month = day = " "
+    city = " "
+    month = " "
+    day = " "
     while bad_user_input:
         # get user input for city (chicago, new york city, washington). HINT: Use a while loop to handle invalid inputs
         try:
@@ -97,7 +99,7 @@ def load_data(city, month, day):
     Error Handling:
         None
     """
-    file_name = city+".csv"
+    file_name = CITY_DATA.get(city)
     df = pd.read_csv(file_name)
     df["Start Time"] = pd.to_datetime(df["Start Time"])
     df['End Time'] =  pd.to_datetime(df["End Time"])
