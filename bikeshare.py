@@ -5,7 +5,7 @@ import datetime
 import calendar
 
 CITY_DATA = { 'chicago': 'chicago.csv',
-              'new york city': 'new_york_city.csv',
+              'new_york_city': 'new_york_city.csv',
               'washington': 'washington.csv' }
 
 def get_filters():
@@ -94,7 +94,7 @@ def load_data(city, month, day):
     Returns:
         df - Pandas DataFrame containing city data filtered by month and day
     """
-    file_name = city+".csv"
+    file_name = CITY_DATA.get(city)
     df = pd.read_csv(file_name)
     df["Start Time"] = pd.to_datetime(df["Start Time"])
     df['End Time'] =  pd.to_datetime(df["End Time"])
